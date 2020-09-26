@@ -257,7 +257,6 @@ export default {
       if (!this.projectData[index].fundAmount) {
         return;
       }
-
       const projectContract = this.projectData[index].contract;
       this.projectData[index].isLoading = true;
       projectContract.methods.contribute().send({
@@ -268,7 +267,6 @@ export default {
         const projectGoal = parseInt(this.projectData[index].goalAmount, 10);
         this.projectData[index].currentAmount = newTotal;
         this.projectData[index].isLoading = false;
-
         // Set project state to success
         if (newTotal >= projectGoal) {
           this.projectData[index].currentState = 2;
